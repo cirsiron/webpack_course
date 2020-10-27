@@ -8,4 +8,3 @@ module.exports = merge(webpackBase, {
     new cleanWebpack(['../dist'])
   ]
 })
-
