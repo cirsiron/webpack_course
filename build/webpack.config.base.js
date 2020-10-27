@@ -17,17 +17,22 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.jsx?$/,
+        use: [
+          'babel-loader'
+        ]
+      },
+      {
         test: /\.css$/,
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader'
-        ],
-        exclude: 'node_modules',
+        ]
       }
     ]
   },
   plugins: [
-    new webpack.BannerPlugin(date.toString()),  // new一个插件的实例 
+    new webpack.BannerPlugin(date.toString()),  // new一个插件的实例
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "../public/index.html")
     }),

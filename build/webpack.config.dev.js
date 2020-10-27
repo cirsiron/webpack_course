@@ -2,7 +2,7 @@ const merge = require('webpack-merge')
 const webpackBase = require('./webpack.config.base')
 
 const devServer = {
-  port: 9090,
+  port: 9097,
   contentBase: '../dist',
   inline: true,
   historyApiFallback: true
