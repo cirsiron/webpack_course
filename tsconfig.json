@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
     "jsx": "react",
-    "esModuleInterop": true
+    "esModuleInterop": true // cjs格式的也可以使用
   }
 }
