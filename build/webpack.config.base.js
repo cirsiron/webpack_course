@@ -7,15 +7,35 @@ const date = new Date()
 module.exports = {
   mode: 'development',
   entry: {
-    'main': path.join(__dirname, "../src/index.js"),
+    'main': path.join(__dirname, "../src/index"),
     'second': path.join(__dirname, "../src/second.js")
   },
   output: {
     path: path.join(__dirname, "../dist"),
     filename: '[name].js?v=[hash:6]'
   },
+  resolve: {
+    extensions: [ // 引入不用写后缀名
+      '.jsx',
+      '.tsx',
+      '.js',
+      '.ts',
+      '.json',
+      '.css',
+      '.less',
+      '.scss',
+      '.sass'
+    ]
+  },
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        use: [
+          'ts-loader'
+        ],
+        exclude: path.resolve(__dirname, '..','node_modules'),
+      },
       {
         test: /\.jsx?$/,
         use: [
